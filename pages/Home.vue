@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    
     <SfHero class="hero">
       <SfHeroItem
         v-for="(hero, i) in heroes"
