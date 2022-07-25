@@ -3,9 +3,15 @@ import webpack from 'webpack';
 
 /** @type { import('@nuxt/types').NuxtConfig } */ 
 const config = {
+  target: 'static',
   server: {
-    port: process.env.APP_PORT || 3001,
+    port: 3000,
     host: '0.0.0.0'
+  },
+  env: {
+    appURL: process.env.NODE_ENV !== 'production' ? process.env.BASE_URL : process.env.BASE_URL_PRODUCTION,
+    storeURL: process.env.SHOPIFY_DOMAIN,
+    sopifyAccessToken: process.env.SHOPIFY_STOREFRONT_TOKEN,
   },
   publicRuntimeConfig: {
     appKey: 'vsf2spcon',
